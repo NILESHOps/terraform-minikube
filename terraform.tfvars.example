@@ -1,0 +1,34 @@
+# Kubernetes version to use
+kubernetes_version = "v1.28.3"
+
+# Driver to use (docker, virtualbox, hyperkit)
+driver = "docker"
+
+# Cluster name
+cluster_name = "my-minikube"
+
+# List of addons to enable
+enabled_addons = [
+  "dashboard",
+  "metrics-server",
+  "ingress",
+  "ingress-dns",
+  "registry"
+]
+
+# Resource allocation
+memory    = "4096"  # 4GB
+cpus      = 4
+disk_size = "40000" # 40GB
+
+# Container runtime
+container_runtime = "docker"
+
+# CNI plugin
+cni = "calico"
+
+# Extra flags for minikube start
+extra_flags = [
+  "--insecure-registry=10.0.0.0/24",
+  "--feature-gates=ServerSideApply=true"
+]
